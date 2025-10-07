@@ -3,8 +3,9 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 
-# Download punkt and stopwords each time app starts (fixes deploy errors)
+# Download required NLTK datasets to fix missing punkt_tab error on Render
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 app = Flask(__name__)
