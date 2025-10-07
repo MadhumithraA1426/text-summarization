@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text Summarization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summarization</h1>
+        <form method="POST" action="/">
+            <textarea name="text" placeholder="Paste text here..." required>{{ original if original else '' }}</textarea>
+            <button type="submit">Summarize</button>
+        </form>
+        <div id="summary-result">
+            {% if summary %}
+            <h2>Summary:</h2>
+            <p>{{ summary }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
